@@ -1,5 +1,6 @@
 import streamlit as st
-
+import requests
+import json
 
 page_bg_img = f"""
 <style>
@@ -75,10 +76,43 @@ def main_page():
 # Function to display the teacher's dashboard
 def teacher_dashboard():
     st.title("Teacher's Dashboard")
-    st.write("Welcome to the Teacher's Dashboard!")
+    st.write("<h3>Create a quiz</h3>", unsafe_allow_html=True)
     # Add more components and functionality for the teacher's dashboard here
+
+    # File upload section
+    uploaded_file = st.file_uploader("Upload a file")
+
+    if uploaded_file is not None:
+        file_url = "https://example.com/uploaded_file.pdf"  # Replace with actual file URL
+        result = trigger_relevance_ai(file_url)
+        st.json(result)
+
     if st.button("Go Back"):
         st.session_state.page = "main"
+# Function to trigger Relevance AI app
+def trigger_relevance_ai(file_url):
+    api_key = 'YOUR_API_KEY'  # Replace with your API key
+    endpoint = 'https://api-f1db6c.stack.tryrelevance.com/latest/studios/75ddd01a-1841-4267-abfd-0297ad3f83fe/trigger_limited'
+
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': api_key
+    }
+
+    payload = {
+        'params': {
+            'subject_file_urls': [],
+            'file_url': file_url
+        },
+        'project': '8cf8ab1430e6-45f0-9431-31e53339530f'
+    }
+
+    try:
+        response = requests.post(endpoint, headers=headers, data=json.dumps(payload))
+        response_data = response.json()
+        return response_data
+    except Exception as e:
+        st.error(f"Error calling Relevance AI API: {str(e)}")
 
 # Function to display the student's dashboard
 def student_dashboard():
