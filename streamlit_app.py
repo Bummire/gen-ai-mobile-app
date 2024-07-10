@@ -22,7 +22,7 @@ def main_page():
 # Function to display the teacher's dashboard
 def teacher_dashboard():
     st.title("Teacher's Dashboard")
-    st.write("<h3>Create a quiz</h3>", unsafe_allow_html=True)
+    st.write("<h3>AI Generated Quiz</h3>", unsafe_allow_html=True)
     # Add more components and functionality for the teacher's dashboard here
 
     # File upload section
@@ -35,6 +35,7 @@ def teacher_dashboard():
 
     if st.button("Go Back"):
         st.session_state.page = "main"
+
 # Function to trigger Relevance AI app
 def trigger_relevance_ai(file_url):
     api_key = 'sk-YTI0ZjlkY2ItNWQ1ZC00ZDIxLThlMGYtZTVhZTUxYzQxMTc3'  # Replace with your API key
