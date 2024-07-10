@@ -37,7 +37,7 @@ def teacher_dashboard():
         st.session_state.page = "main"
 # Function to trigger Relevance AI app
 def trigger_relevance_ai(file_url):
-    api_key = 'YOUR_API_KEY'  # Replace with your API key
+    api_key = 'sk-YTI0ZjlkY2ItNWQ1ZC00ZDIxLThlMGYtZTVhZTUxYzQxMTc3'  # Replace with your API key
     endpoint = 'https://api-f1db6c.stack.tryrelevance.com/latest/studios/75ddd01a-1841-4267-abfd-0297ad3f83fe/trigger_limited'
 
     headers = {
