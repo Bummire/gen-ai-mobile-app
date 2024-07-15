@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import json
+import streamlit.components.v1 as components
 
 # Function to display the main page with buttons
 def main_page():
@@ -43,7 +44,7 @@ def trigger_relevance_ai(file_url):
 
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': api_key
+        'Authorization': 'sk-YTI0ZjlkY2ItNWQ1ZC00ZDIxLThlMGYtZTVhZTUxYzQxMTc3'
     }
 
     payload = {
@@ -53,6 +54,12 @@ def trigger_relevance_ai(file_url):
         },
         'project': '8cf8ab1430e6-45f0-9431-31e53339530f'
     }
+
+    # Embeds the Relevance AI Agent
+    iframe_code = '''
+    <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
+
+    components.html(iframe_code, height=800)
 
     try:
         response = requests.post(endpoint, headers=headers, data=json.dumps(payload))
