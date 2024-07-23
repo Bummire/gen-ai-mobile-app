@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import json
 import streamlit.components.v1 as components
+import random
 
 # Function to display the main page with buttons
 def main_page():
@@ -26,14 +27,6 @@ def teacher_dashboard():
     st.write("<h3>AI Generated Quiz</h3>", unsafe_allow_html=True)
     # Add more components and functionality for the teacher's dashboard here
 
-    # File upload section
-    uploaded_file = st.file_uploader("Upload a file")
-
-    if uploaded_file is not None:
-        file_url = "https://example.com/uploaded_file.pdf"  # Replace with actual file URL
-        result = trigger_relevance_ai(file_url)
-        st.json(result)
-
     if st.button("Go Back"):
         st.session_state.page = "main"
 
@@ -55,7 +48,6 @@ def trigger_relevance_ai(file_url):
         'project': '8cf8ab1430e6-45f0-9431-31e53339530f'
     }
 
-    # Embeds the Relevance AI Agent
     iframe_code = '''
     <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
 
@@ -71,10 +63,47 @@ def trigger_relevance_ai(file_url):
 # Function to display the student's dashboard
 def student_dashboard():
     st.title("Student's Dashboard")
-    st.write("Welcome to the Student's Dashboard!")
-    # Add more components and functionality for the student's dashboard here
-    if st.button("Go Back"):
-        st.session_state.page = "main"
+    
+    if "student_mode" not in st.session_state:
+        st.session_state.student_mode = "default"
+    
+    # Student Dashboard with 3 options, login, create and go back (returns user to main screen)
+    if st.session_state.student_mode == "default":
+        st.write("Please choose an option:")
+        if st.button("Login"):
+            st.session_state.student_mode = "login"
+        if st.button("Create User"):
+            st.session_state.student_mode = "create"
+        if st.button("Go Back"):
+            st.session_state.page = "main"
+    
+    # Login screen where user can input their existing ID
+    elif st.session_state.student_mode == "login":
+        login_id = st.text_input("Enter your 7-digit ID", max_chars=7)
+        if len(login_id) == 7 and login_id.isdigit():
+            st.success("Logged in successfully!")
+            st.session_state.student_mode = "logged_in"
+        elif len(login_id) > 0:
+            st.error("ID must be 7 digits long")
+        if st.button("Go Back"):
+            st.session_state.student_mode = "default"
+    
+    # A new ID for student is generated (7 digits), which they can use to login
+    elif st.session_state.student_mode == "create":
+        new_id = str(random.randint(1000000, 9999999))
+        st.markdown(f"Your new ID is: **{new_id}**", unsafe_allow_html=True)
+        st.write("Please save your ID somewhere safe for future usage!")
+        if st.button("Login"):
+            st.session_state.student_mode = "login"
+    
+    # Once login is successful, the Relevance AI Agent appears
+    elif st.session_state.student_mode == "logged_in":
+        iframe_code = '''
+        <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/75ea7fba-abc0-4be4-8069-7a784ce68ff5/share" width="100%" height="800px" frameborder="0"></iframe>'''
+        components.html(iframe_code, height=800)
+        if st.button("Go Back"):
+            st.session_state.student_mode = "default"
+
 
 # Main function to control the navigation
 def main():
