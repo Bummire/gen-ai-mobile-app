@@ -7,7 +7,8 @@ def main_page():
     st.markdown(
         """
         <h1 style="text-align: center;">Generative AI Learning App</h1>
-        <h3 style="text-align: center;">Sign in as</h3>
+        <p style="text-align: center;">A Generative AI adaptive learning and teaching tool for <br>cybersecurity education</p>
+        <h3 style="text-align: center;"><br>Sign in as<br></h3>
         """,
         unsafe_allow_html=True
     )
@@ -38,7 +39,7 @@ def teacher_dashboard():
     <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
     components.html(iframe_code, height=800)
 
-    if st.button("Go Back"):
+    if st.button("Sign out"):
         st.session_state.page = "main"
 
 
@@ -140,7 +141,7 @@ def student_dashboard():
         <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
         components.html(iframe_code, height=800)
         
-        if st.button("Go Back"):
+        if st.button("Sign out"):
             st.session_state.student_mode = "default"
 
 # Main function to control the navigation
