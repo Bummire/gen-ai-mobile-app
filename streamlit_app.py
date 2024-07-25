@@ -14,14 +14,24 @@ def main_page():
     )
 
     # Create a single row with two columns for the buttons centered on the page
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
+    col1, col2 = st.columns([1, 1])
 
-    with col2:
+    with col1:
         if st.button("Teacher"):
             st.session_state.page = "teacher"
-    with col4:
+    with col2:
         if st.button("Student"):
             st.session_state.page = "student"
+    
+    st.markdown("""
+    <style>
+    .stButton>button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Function to display the teacher's dashboard
 def teacher_dashboard():
@@ -63,17 +73,27 @@ def student_dashboard():
             """,
             unsafe_allow_html=True
         )
-        col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
+        col1, col2, col3 = st.columns([1, 1, 1])
         
-        with col2:
+        with col1:
             if st.button("Login"):
                 st.session_state.student_mode = "login"
-        with col3:
+        with col2:
             if st.button("Create User"):
                 st.session_state.student_mode = "create"
-        with col4:
+        with col3:
             if st.button("Go Back"):
                 st.session_state.page = "main"
+
+        st.markdown("""
+        <style>
+        .stButton>button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
     
     # Login screen where user can input their existing ID
@@ -119,6 +139,16 @@ def student_dashboard():
             """,
             unsafe_allow_html=True
         )
+
+        st.markdown("""
+        <style>
+        .stButton>button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
         # Utilised when centering buttons
         col1, col2, col3 = st.columns([1, 1, 1])  # Adjust column proportions if necessary
