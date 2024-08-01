@@ -46,7 +46,7 @@ def teacher_dashboard():
     
     # Embedded Relevance AI Agent for Teacher
     iframe_code = '''
-    <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
+    <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/2988d09a-bb1d-44d7-9d82-08ddd53ab748/share" width="100%" height="800px" frameborder="0"></iframe>'''
     components.html(iframe_code, height=800)
 
     if st.button("Sign out"):
@@ -168,7 +168,7 @@ def student_dashboard():
         
         # Embedded Relevance AI Agent for Student Use
         iframe_code = '''
-        <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/1d783e42-566a-4936-bd21-1ac9060c802e/share" width="100%" height="800px" frameborder="0"></iframe>'''
+        <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/2988d09a-bb1d-44d7-9d82-08ddd53ab748/share" width="100%" height="800px" frameborder="0"></iframe>'''
         components.html(iframe_code, height=800)
         
         if st.button("Sign out"):
