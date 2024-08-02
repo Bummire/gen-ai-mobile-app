@@ -1,4 +1,4 @@
-# Streamlit Setup Instructions (Preferred)
+# Streamlit Setup Instructions (Preferred for Project Members)
 #As a team we have decided to use their built in codespace for ease of use, access [Streamlit](https://streamlit.io/) here. 
 
 1. Create an account or Sign in
@@ -24,7 +24,7 @@
    Repository, which will automatically allow you to gain access to the Streamlit app project.
    ```
  
-# Installation Guide (Optional)
+# Installation Guide (Optional for Project Members, Requirement for Stakeholders)
  You are not required to install streamlit, but you can if you decide to. Follow the instructions below to do so.
 
 1. Install the requirements
