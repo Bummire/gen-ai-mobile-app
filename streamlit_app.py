@@ -6,7 +6,7 @@ import random
 def main_page():
     st.markdown(
         """
-        <h1 style="text-align: center;">Generative AI Learning App</h1>
+        <h1 style="text-align: center;">AI Cybered Solutions</h1>
         <p style="text-align: center;">A Generative AI adaptive learning and teaching tool for <br>cybersecurity education</p>
         <h3 style="text-align: center;"><br>Sign in as<br></h3>
         """,
