@@ -1,5 +1,5 @@
 import streamlit as st
-from main_menu import main_page
+from main_menu import main_menu
 from teacher_dashboard import teacher_dashboard
 from student_dashboard import student_dashboard
 
@@ -24,7 +24,7 @@ def main():
         st.session_state.page = "main"
     
     if st.session_state.page == "main":
-        main_page()
+        main_menu()
     elif st.session_state.page == "teacher":
         teacher_dashboard()
     elif st.session_state.page == "student":
