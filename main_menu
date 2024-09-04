@@ -1,6 +1,6 @@
 import streamlit as st
 
-def main_page():
+def main_menu():
     # Add custom CSS for the background image
     st.markdown(
         """
@@ -52,5 +52,3 @@ def main_page():
     }
     </style>
     """, unsafe_allow_html=True)
-
-    #test
