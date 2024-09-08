@@ -1,29 +1,6 @@
 import streamlit as st
 
 def main_menu():
-    # Add custom CSS for the background image
-    st.markdown(
-        """
-        <style>
-        body {
-            background-image: url('https://i.ibb.co/7pMMJpJ/sample-image.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        .stButton>button {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: black;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
     st.markdown(
         """
         <h1 style="text-align: center;">AI Cybered Solutions</h1>
@@ -56,7 +33,7 @@ def main_menu():
 def main():
     if "page" not in st.session_state:
         st.session_state.page = None
-    
+
     if st.session_state.page is None:
         main_menu()
     elif st.session_state.page == "teacher":
