@@ -27,20 +27,30 @@
 # Installation Guide (Optional for Project Members, Requirement for Stakeholders)
  You are not required to install streamlit, but you can if you decide to. Follow the instructions below to do so.
 
-1. Install the requirements
-
+1. Install the latest version of Python 
+   
    ```
-   $ pip install -r requirements.txt
+   Visit [Python.org](https://www.python.org/downloads//) and download the latest version of Python, when installing ensure you tick the box for installing pip and the box for "Add Python [Version] to PATH.
+   ```
+
+1. Choose an IDE of your choice
+   
+   ```
+   We recommend using Visual Studio Code as the online codespaces has VSC built in.
+   Once you've accessed your IDE of choice, navigate to the terminal or console built in, and input the following:
+   ```
+   ```
+   $ pip install streamlit
    ```
 
 2. Run the app
-
+   
    ```
    $ streamlit run streamlit_app.py
    ```
 
  
-# How to Start Coding
+# How to Start Coding (For Development Team)
 1. Locating the project within Streamlit
 
    ```
