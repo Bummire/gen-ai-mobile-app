@@ -2,11 +2,33 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 def teacher_dashboard():
+    """
+    <style>
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 50px;
+        }
+
+        h3 {
+            text-align: center;
+            color: black;
+            font-size: 30px;
+        }
+
+        p {
+            text-align: center;
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+    """
+    
     st.markdown(
         """
-        <h1 style="text-align: center;">Teacher's Dashboard</h1>
-        <h3 style="text-align: center;">Chatbot Agent</h3>
-        <p style="text-align: center;">Our fine-tuned agent is capable of generating quizzes from your inputs!</p>
+        <h1>Teacher's Dashboard</h1>
+        <h3>Chatbot Agent</h3>
+        <p>Our fine-tuned agent is capable of generating quizzes from your inputs!</p>
         """,
         unsafe_allow_html=True
     )
