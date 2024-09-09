@@ -4,18 +4,17 @@ import streamlit.components.v1 as components
 def student_dashboard():
     """"
     <style> 
-    h1 {
-        text-align: center;
-        color: black;
-        font-size: 50px;
-    }
-
-    h1 {
-        text-align: center;
-        color: black;
-        font-size: 20px;
-    }
-
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 50px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 20px;
+        }
     </style>
     """
     
