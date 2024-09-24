@@ -6,58 +6,58 @@ def main_menu():
     # Apply background image only on the main menu
     page_bg_img = """
     <style>
-    /* Meta tag to set viewport for responsive design */
-    @viewport {
-        width: device-width;
-        initial-scale: 1;
-        user-scalable=no;
-    }
+        /* Meta tag to set viewport for responsive design */
+        @viewport {
+            width: device-width;
+            initial-scale: 1;
+            user-scalable=no;
+        }
     
-    [data-testid="stApp"] {
-    background-image: url("https://i.ibb.co/YyGdRxq/image.png");
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-    overflow: hidden; /* Prevent Scrolling */
-    }
+        [data-testid="stApp"] {
+            background-image: url("https://i.ibb.co/YyGdRxq/image.png");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
 
-    /* Prevent scrolling on mobile devices */
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        text-align: center;
-    }
+        /* Hopefully it prevents scrolling on mobile devices */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+        }
 
-    .button-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;  /* Align buttons at the bottom */
-        height: 25vh;  /* Take up most of the screen's height */
-        align-items: center;
-    }
-    .stButton>button {
-        width: 95%;  /* Button takes up 80% of the screen width */
-        margin: 10px;
-        padding: 15px;
-        font-size: 20px;
-        background-color: rgba(255, 255, 255, 0.3);  /* Make the buttons slightly transparent */
-        border-radius: 25px;
-        color: white;  
-    }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;  /* Align buttons at the bottom */
+            height: 25vh;  /* Take up most of the screen's height */
+            align-items: center;
+        }
+
+        .stButton>button {
+            width: 95%;  /* Button takes up 80% of the screen width */
+            margin: 10px;
+            padding: 15px;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.3);  /* Make the buttons slightly transparent */
+            border-radius: 25px;
+            color: white;  
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Shadow */
+        }
     
-    h1 {
-        margin-top: 30px;
-        font-size: 50px;
-        color: white;
-    }
+        h1 {
+            margin-top: 30px;
+            font-size: 50px;
+            color: white;
+        }
 
-    p {
-        font-size: 20px;
-        color: white;
-    }
+        p {
+            font-size: 20px;
+            color: white;
+        }
 
-    
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
