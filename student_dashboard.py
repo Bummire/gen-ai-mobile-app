@@ -60,7 +60,7 @@ def student_dashboard():
 
     # Embedded Relevance AI Agent for Student Use
     iframe_code = '''
-    <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/2988d09a-bb1d-44d7-9d82-08ddd53ab748/share" width="100%" height="800px" frameborder="0"></iframe>'''
+    <iframe src="https://app.relevanceai.com/agents/f1db6c/8cf8ab1430e6-45f0-9431-31e53339530f/cc27cd2c-f475-405b-b8f2-ec40b0898951/share" width="100%" height="800px" frameborder="0"></iframe>'''
     components.html(iframe_code, height=800)
     
     if st.button("Sign out"):
